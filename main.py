@@ -1,16 +1,17 @@
-from biblioteca import *
+"""
+Script principal para ejecutar la lógica de control de la biblioteca.
+"""
+from biblioteca import Biblioteca, Libro
 
-l=liblio("central")
+biblioteca_central = Biblioteca("Central")
+libro_python = Libro("Python", "Guido van Rossum", 1)
+libro_java = Libro("Java", "James Gosling", 2)
 
-b1=bk("Python","Guido",1)
-b2=bk("Java","Gosling",2)
+biblioteca_central.agregar_libro(libro_python)
+biblioteca_central.agregar_libro(libro_java)
+biblioteca_central.mostrar_inventario()
 
-l.addb(b1)
-l.addb(b2)
-
-l.show()
-
-print(b1.prest())
-print(b1.prest())
-b1.ret()
-print(b1.prest())
+print(libro_python.prestar())
+print(libro_python.prestar())
+libro_python.devolver()
+print(libro_python.prestar())
